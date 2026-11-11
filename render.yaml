@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: campuscare-management-system
+    runtime: static
+    staticPublishPath: .
