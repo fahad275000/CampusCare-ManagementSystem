@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusCare — Smart Campus Complaint &amp; Maintenance Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================================================
+       SCREEN 1: LOGIN SCREEN (Role-Based Academic Prototype)
+  ========================================================== -->
+  <main id="screen-login" class="login-screen" aria-label="CampusCare Demo Login">
+    <div class="login-container login-container-single">
+      <section class="login-card" aria-label="Role Selection Sign In">
+        <div class="login-top-bar">
+          <div class="brand-lockup">
+            <div class="brand-icon brand-icon-sm" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="brand-title-sm">CampusCare</h1>
+              <p class="brand-subtitle-sm">Campus Complaint &amp; Maintenance System</p>
+            </div>
+          </div>
+          <span class="badge badge-info">Academic Prototype</span>
+        </div>
+
+        <div class="login-card-header">
+          <h2>Sign in to Demo Workspace</h2>
+          <p>Demonstration authentication backed by browser <strong>LocalStorage</strong> (no real passwords or backend server).</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <span class="field-label">1. Select User Role</span>
+            <div class="role-selector" role="radiogroup" aria-label="User Role">
+              <button type="button" class="role-card active" data-role="student" aria-pressed="true">
+                <span class="role-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                </span>
+                <span class="role-name">Student</span>
+                <span class="role-desc">Report &amp; track issues</span>
+              </button>
+
+              <button type="button" class="role-card" data-role="admin" aria-pressed="false">
+                <span class="role-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
+                  </svg>
+                </span>
+                <span class="role-name">Administrator</span>
+                <span class="role-desc">Prioritize &amp; assign</span>
+              </button>
+
+              <button type="button" class="role-card" data-role="staff" aria-pressed="false">
+                <span class="role-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  </svg>
+                </span>
+                <span class="role-name">Maintenance Staff</span>
+                <span class="role-desc">Resolve assigned tasks</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-account-select" class="field-label">2. Demo Account Profile</label>
+            <select id="login-account-select" class="form-control" required></select>
+            <p id="login-role-hint" class="field-hint"></p>
+          </div>
+
+          <div class="login-actions">
+            <button type="submit" id="btn-login" class="btn btn-primary btn-lg btn-block">
+              <span>Enter Workspace</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="login-instructions-compact" aria-label="Sample Login Instructions">
+          <div class="instructions-title">Sample Demo Accounts</div>
+          <div class="instructions-grid">
+            <span><strong>Student:</strong> Aarav Patel (<code>STU-2026-104</code>)</span>
+            <span><strong>Admin:</strong> Dr. Elena Vance (<code>ADM-001</code>)</span>
+            <span><strong>Staff:</strong> Marcus Thorne (<code>TECH-101</code>)</span>
+          </div>
+        </div>
+
+        <div class="login-card-footer">
+          <span class="storage-pill">
+            <span class="status-dot-live" aria-hidden="true"></span>
+            <span id="login-record-count">0 stored complaints in LocalStorage</span>
+          </span>
+          <button type="button" id="btn-login-reset-demo" class="btn btn-ghost btn-sm">
+            Reset Demo Data
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       AUTHENTICATED WORKSPACE SHELL (Screens 2, 3, 4, 5)
+  ========================================================== -->
+  <div id="app-shell" class="app-shell hidden">
+    <!-- Mobile Backdrop -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" aria-hidden="true"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar" aria-label="Workspace Navigation">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon brand-icon-sm" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <div class="sidebar-brand-name">CampusCare</div>
+            <div class="sidebar-brand-tag">Academic Prototype</div>
+          </div>
+        </div>
+        <button type="button" id="btn-close-sidebar" class="btn-icon-only mobile-only" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-role-banner">
+        <span class="eyebrow">Active Role</span>
+        <div id="sidebar-role-badge" class="role-pill">Student</div>
+      </div>
+
+      <nav id="sidebar-nav" class="sidebar-nav" aria-label="Primary Views"></nav>
+
+      <div class="sidebar-workflow-card">
+        <div class="sidebar-workflow-title">Lifecycle Stages</div>
+        <div class="mini-pipeline">
+          <span class="mini-stage stage-pending">Pending</span>
+          <span class="mini-arrow" aria-hidden="true">&rarr;</span>
+          <span class="mini-stage stage-assigned">Assigned</span>
+          <span class="mini-arrow" aria-hidden="true">&rarr;</span>
+          <span class="mini-stage stage-progress">In Progress</span>
+          <span class="mini-arrow" aria-hidden="true">&rarr;</span>
+          <span class="mini-stage stage-resolved">Resolved</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div id="sidebar-user-avatar" class="user-avatar" aria-hidden="true">AP</div>
+          <div class="user-meta">
+            <div id="sidebar-user-name" class="user-name">Aarav Patel</div>
+            <div id="sidebar-user-id" class="user-id">STU-2026-104</div>
+          </div>
+        </div>
+        <div class="sidebar-footer-actions">
+          <button type="button" id="btn-sidebar-reset" class="btn btn-ghost btn-sm btn-block">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            <span>Reset Demo Data</span>
+          </button>
+          <button type="button" id="btn-logout" class="btn btn-secondary btn-sm btn-block">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            <span>Switch Role / Sign Out</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Area -->
+    <div class="workspace-main">
+      <!-- Mobile / Top Utility Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" id="btn-mobile-menu" class="btn-icon-only mobile-only" aria-label="Open navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+          <div class="topbar-breadcrumb">
+            <span id="topbar-role-label" class="topbar-role">Student Portal</span>
+            <span class="topbar-sep" aria-hidden="true">/</span>
+            <span id="topbar-screen-title" class="topbar-title">Dashboard</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <span class="prototype-chip" title="Data is persisted locally in your browser">
+            LocalStorage Prototype
+          </span>
+          <button type="button" id="btn-topbar-logout" class="btn btn-ghost btn-sm mobile-only">Sign Out</button>
+        </div>
+      </header>
+
+      <!-- =====================================================
+           SCREEN 2: STUDENT DASHBOARD
+      ====================================================== -->
+      <section id="screen-student-dashboard" class="screen-view hidden" aria-label="Student Dashboard">
+        <div class="page-header">
+          <div>
+            <h1 id="student-welcome-heading">Student Dashboard</h1>
+            <p class="page-subtitle">Track your submitted campus complaints, assigned technicians, and resolution status.</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" id="btn-go-submit" class="btn btn-primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <span>Submit New Complaint</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Student KPI Grid -->
+        <div id="student-kpi-grid" class="kpi-grid" aria-label="Personal Complaint Statistics"></div>
+
+        <!-- Student Secondary Analytics Row -->
+        <div class="analytics-grid">
+          <section class="panel" aria-label="Personal Complaints by Category">
+            <div class="panel-header">
+              <h2>My Complaints by Category</h2>
+              <span class="panel-meta" id="student-cat-total">0 categories active</span>
+            </div>
+            <div id="student-category-breakdown" class="category-bars"></div>
+          </section>
+
+          <section class="panel" aria-label="Recent Updates">
+            <div class="panel-header">
+              <h2>Recent Complaint Activity</h2>
+              <span class="panel-meta">Latest status updates</span>
+            </div>
+            <div id="student-recent-list" class="recent-list"></div>
+          </section>
+        </div>
+
+        <!-- Student Complaint History -->
+        <section class="panel" aria-label="Personal Complaint History">
+          <div class="panel-header panel-header-wrap">
+            <div>
+              <h2>My Complaint History</h2>
+              <p class="panel-subtitle">Search, filter, and open any complaint to inspect technician assignments and resolution notes.</p>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input type="search" id="student-search" class="form-control search-input" placeholder="Search by ID, title, location, or description..." aria-label="Search my complaints" />
+            </div>
+
+            <select id="student-filter-category" class="form-control filter-select" aria-label="Filter by category">
+              <option value="all">All Categories</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Water Supply">Water Supply</option>
+              <option value="Classroom Maintenance">Classroom Maintenance</option>
+              <option value="Wi-Fi/Internet">Wi-Fi/Internet</option>
+              <option value="Cleanliness">Cleanliness</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <select id="student-filter-status" class="form-control filter-select" aria-label="Filter by status">
+              <option value="all">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="Assigned">Assigned</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+
+            <button type="button" id="btn-student-clear-filters" class="btn btn-ghost btn-sm">Clear Filters</button>
+          </div>
+
+          <div id="student-complaints-list" class="complaint-card-list"></div>
+        </section>
+      </section>
+
+      <!-- =====================================================
+           SCREEN 3: COMPLAINT SUBMISSION SCREEN
+      ====================================================== -->
+      <section id="screen-submit-complaint" class="screen-view hidden" aria-label="Complaint Submission Form">
+        <div class="page-header">
+          <div>
+            <h1>Submit New Complaint</h1>
+            <p class="page-subtitle">Report campus infrastructure, electrical, water, network, or cleanliness issues for maintenance review.</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" id="btn-back-student-dash" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+              </svg>
+              <span>Back to Dashboard</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="submission-layout">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Complaint Details Form</h2>
+              <span class="badge badge-info">Auto-ID Generated on Submit</span>
+            </div>
+
+            <form id="complaint-form" class="stacked-form" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="comp-title" class="field-label">
+                    Complaint Title <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <input type="text" id="comp-title" class="form-control" maxlength="100" placeholder="e.g., Broken projector mount in Lecture Hall 204" required />
+                  <p id="err-comp-title" class="field-error" role="alert"></p>
+                </div>
+
+                <div class="form-group">
+                  <label for="comp-category" class="field-label">
+                    Issue Category <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <select id="comp-category" class="form-control" required>
+                    <option value="">Select a category...</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Classroom Maintenance">Classroom Maintenance</option>
+                    <option value="Wi-Fi/Internet">Wi-Fi/Internet</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <p id="err-comp-category" class="field-error" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="comp-location" class="field-label">
+                  Campus Location / Building &amp; Room <span class="optional-tag">(Optional)</span>
+                </label>
+                <input type="text" id="comp-location" class="form-control" maxlength="80" placeholder="e.g., Engineering Block B, Room 204" />
+              </div>
+
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="comp-description" class="field-label">
+                    Detailed Description <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                  <span id="comp-desc-counter" class="char-counter">0 / 600</span>
+                </div>
+                <textarea id="comp-description" class="form-control textarea-control" rows="5" maxlength="600" placeholder="Describe the issue clearly, when it started, and any immediate safety concerns..." required></textarea>
+                <p id="err-comp-description" class="field-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="comp-image" class="field-label">
+                  Attach Evidence Photo <span class="optional-tag">(Optional — PNG, JPG, WEBP up to 500 KB)</span>
+                </label>
+                <div class="upload-box" id="upload-dropzone">
+                  <input type="file" id="comp-image" class="file-input" accept="image/png,image/jpeg,image/webp" />
+                  <div class="upload-prompt">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <div>
+                      <strong>Click to attach an image</strong> or drag and drop
+                      <p>Validates image format and enforces a 500 KB LocalStorage-safe size limit.</p>
+                    </div>
+                  </div>
+                </div>
+                <p id="err-comp-image" class="field-error" role="alert"></p>
+
+                <div id="image-preview-wrap" class="image-preview-wrap hidden">
+                  <img id="comp-image-preview" src="" alt="Attached complaint preview" />
+                  <div class="image-preview-meta">
+                    <span id="comp-image-name" class="image-file-name"></span>
+                    <button type="button" id="btn-remove-image" class="btn btn-danger-ghost btn-sm">Remove Image</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" id="btn-reset-form" class="btn btn-ghost">Clear Form</button>
+                <button type="submit" id="btn-submit-complaint" class="btn btn-primary btn-lg">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 2 11 13" />
+                    <path d="m22 2-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                  <span>Submit Complaint</span>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="panel guidance-panel" aria-label="Submission Guidelines">
+            <h2>Submission Guidelines</h2>
+            <ul class="guidance-list">
+              <li>
+                <strong>Automatic Unique ID</strong>
+                <p>Each submission receives a unique tracking ID (e.g., <code>CMP-2026-1009</code>) and starts in <em>Pending</em> status.</p>
+              </li>
+              <li>
+                <strong>Clear Location &amp; Context</strong>
+                <p>Include building name, floor, or room number so maintenance teams can locate the issue immediately.</p>
+              </li>
+              <li>
+                <strong>Admin Triage &amp; Priority</strong>
+                <p>Campus Administrators review incoming tickets, assign priority (<em>Low</em> to <em>Urgent</em>), and dispatch staff.</p>
+              </li>
+              <li>
+                <strong>Image Size Guardrail</strong>
+                <p>Attachments are stored locally as Data URLs with a 500 KB limit to keep browser LocalStorage reliable.</p>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SCREEN 4: ADMINISTRATOR DASHBOARD
+      ====================================================== -->
+      <section id="screen-admin-dashboard" class="screen-view hidden" aria-label="Administrator Dashboard">
+        <div class="page-header">
+          <div>
+            <h1>Administrator Operations Dashboard</h1>
+            <p class="page-subtitle">Monitor campus-wide maintenance demand, set priorities, assign technicians, and audit complaint records.</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" id="btn-admin-reset-demo" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+              <span>Reset Demo Data</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Admin KPI Grid -->
+        <div id="admin-kpi-grid" class="kpi-grid" aria-label="Campus Complaint Statistics"></div>
+
+        <!-- Status Pipeline Summary + Category Breakdown -->
+        <div class="analytics-grid">
+          <section class="panel" aria-label="Category Distribution">
+            <div class="panel-header">
+              <h2>Complaints by Category</h2>
+              <span class="panel-meta" id="admin-cat-meta">Live breakdown</span>
+            </div>
+            <div id="admin-category-breakdown" class="category-bars"></div>
+          </section>
+
+          <section class="panel" aria-label="Recent Campus Complaints">
+            <div class="panel-header">
+              <h2>Recent Complaints</h2>
+              <span class="panel-meta">Newest submissions</span>
+            </div>
+            <div id="admin-recent-list" class="recent-list"></div>
+          </section>
+        </div>
+
+        <!-- Admin Full Complaints Management Table -->
+        <section class="panel" aria-label="All Submitted Complaints">
+          <div class="panel-header panel-header-wrap">
+            <div>
+              <h2>Complaint Management Registry</h2>
+              <p class="panel-subtitle">Inspect details, set priority levels, assign maintenance staff, and track resolution history.</p>
+            </div>
+            <span id="admin-result-count" class="badge badge-neutral">0 complaints</span>
+          </div>
+
+          <div class="filter-bar">
+            <div class="search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input type="search" id="admin-search" class="form-control search-input" placeholder="Search ID, title, student, staff..." aria-label="Search all complaints" />
+            </div>
+
+            <select id="admin-filter-category" class="form-control filter-select" aria-label="Filter by category">
+              <option value="all">All Categories</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Water Supply">Water Supply</option>
+              <option value="Classroom Maintenance">Classroom Maintenance</option>
+              <option value="Wi-Fi/Internet">Wi-Fi/Internet</option>
+              <option value="Cleanliness">Cleanliness</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <select id="admin-filter-status" class="form-control filter-select" aria-label="Filter by status">
+              <option value="all">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="Assigned">Assigned</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+
+            <select id="admin-filter-priority" class="form-control filter-select" aria-label="Filter by priority">
+              <option value="all">All Priorities</option>
+              <option value="Urgent">Urgent</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <button type="button" id="btn-admin-clear-filters" class="btn btn-ghost btn-sm">Clear Filters</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Complaint ID</th>
+                  <th>Issue &amp; Category</th>
+                  <th>Student</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Assigned Staff</th>
+                  <th>Submitted</th>
+                  <th class="text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-table-body"></tbody>
+            </table>
+          </div>
+          <div id="admin-empty-state" class="empty-state hidden"></div>
+        </section>
+      </section>
+
+      <!-- =====================================================
+           SCREEN 5: MAINTENANCE STAFF DASHBOARD
+      ====================================================== -->
+      <section id="screen-staff-dashboard" class="screen-view hidden" aria-label="Maintenance Staff Dashboard">
+        <div class="page-header">
+          <div>
+            <h1 id="staff-welcome-heading">Maintenance Staff Workspace</h1>
+            <p id="staff-specialty-subtitle" class="page-subtitle">Manage tasks assigned directly to you, update work status, and record resolution notes.</p>
+          </div>
+        </div>
+
+        <div class="access-scope-banner" role="note">
+          <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+          <span id="staff-scope-text">Role Isolation Active: Showing only complaints assigned to your staff account.</span>
+        </div>
+
+        <!-- Staff KPI Grid -->
+        <div id="staff-kpi-grid" class="kpi-grid" aria-label="Assigned Workload Statistics"></div>
+
+        <!-- Staff Assigned Queue & Completed Tasks -->
+        <section class="panel" aria-label="Assigned Maintenance Tasks">
+          <div class="panel-header panel-header-wrap">
+            <div class="tab-group" role="tablist" aria-label="Task Queue Filter">
+              <button type="button" class="tab-btn active" data-staff-tab="active" role="tab" aria-selected="true">
+                Active Assigned Tasks
+              </button>
+              <button type="button" class="tab-btn" data-staff-tab="completed" role="tab" aria-selected="false">
+                Completed Tasks
+              </button>
+              <button type="button" class="tab-btn" data-staff-tab="all" role="tab" aria-selected="false">
+                All My Tasks
+              </button>
+            </div>
+            <span id="staff-result-count" class="badge badge-neutral">0 tasks</span>
+          </div>
+
+          <div class="filter-bar">
+            <div class="search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input type="search" id="staff-search" class="form-control search-input" placeholder="Search assigned tasks by ID, title, or location..." aria-label="Search assigned tasks" />
+            </div>
+
+            <select id="staff-filter-priority" class="form-control filter-select" aria-label="Filter assigned tasks by priority">
+              <option value="all">All Priorities</option>
+              <option value="Urgent">Urgent</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <button type="button" id="btn-staff-clear-filters" class="btn btn-ghost btn-sm">Clear Filters</button>
+          </div>
+
+          <div id="staff-task-list" class="staff-task-grid"></div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 1: COMPLAINT DETAIL, HISTORY & ROLE ACTIONS
+  ========================================================== -->
+  <div id="complaint-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-complaint-title">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <span id="modal-complaint-id" class="mono-id">CMP-2026-1001</span>
+          <h2 id="modal-complaint-title">Complaint Details</h2>
+        </div>
+        <button type="button" id="btn-close-complaint-modal" class="btn-icon-only" aria-label="Close complaint details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="complaint-modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 2: CONFIRMATION DIALOG (Delete / Reset Demo Data)
+  ========================================================== -->
+  <div id="confirm-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h2 id="confirm-modal-title">Confirm Action</h2>
+        <button type="button" id="btn-close-confirm-modal" class="btn-icon-only" aria-label="Cancel confirmation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-modal-message" class="confirm-message"></p>
+        <div class="modal-footer-actions">
+          <button type="button" id="btn-confirm-cancel" class="btn btn-secondary">Cancel</button>
+          <button type="button" id="btn-confirm-proceed" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Region -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
