@@ -196,7 +196,7 @@ Automated end-to-end verification was executed against `index.html` using headle
 | Test ID | Test Scenario | Outcome |
 | :---: | :--- | :---: |
 | **T1** | Initial boot renders Login Screen and seeds 8 fictional baseline complaints | **PASS** |
-| **T2** | Student login (`Aarav Patel`) isolates personal complaints and hides peer tickets | **PASS** |
+| **T2** | Student login (`Ruchita`) isolates personal complaints and hides peer tickets | **PASS** |
 | **T3** | Empty complaint submission triggers inline validation for Title, Category, Description | **PASS** |
 | **T4** | Image attachment validator rejects non-image files (`text/plain`) and files `> 500 KB` | **PASS** |
 | **T5** | Valid complaint submission generates unique ID `CMP-2026-1009` in `Pending` status | **PASS** |

@@ -35,14 +35,14 @@
       {
         id: 'stu-1',
         role: 'student',
-        name: 'Aarav Patel',
+        name: 'Ruchita',
         identifier: 'STU-2026-104',
         subtitle: 'Computer Science (Demo Student)'
       },
       {
         id: 'stu-2',
         role: 'student',
-        name: 'Maya Lin',
+        name: 'Mythri',
         identifier: 'STU-2026-218',
         subtitle: 'Electrical Engineering (Demo Student)'
       }
@@ -51,7 +51,7 @@
       {
         id: 'admin-1',
         role: 'admin',
-        name: 'Dr. Elena Vance',
+        name: 'Fahad',
         identifier: 'ADM-001',
         subtitle: 'Campus Facilities Operations Administrator'
       }
@@ -127,7 +127,7 @@
       {
         id: 'CMP-2026-1001',
         studentId: 'stu-1',
-        studentName: 'Aarav Patel',
+        studentName: 'Ruchita',
         studentCode: 'STU-2026-104',
         title: 'Projector HDMI Port Damaged in Lecture Hall 204',
         description:
@@ -146,7 +146,7 @@
         history: [
           {
             timestamp: hoursAgo(3),
-            actor: 'Aarav Patel (Student)',
+            actor: 'Ruchita (Student)',
             action: 'Complaint submitted (Pending Admin Review)',
             status: 'Pending'
           }
@@ -155,7 +155,7 @@
       {
         id: 'CMP-2026-1002',
         studentId: 'stu-1',
-        studentName: 'Aarav Patel',
+        studentName: 'Ruchita',
         studentCode: 'STU-2026-104',
         title: 'Frequent Wi-Fi Drops in Central Library 2nd Floor',
         description:
@@ -174,13 +174,13 @@
         history: [
           {
             timestamp: hoursAgo(28),
-            actor: 'Aarav Patel (Student)',
+            actor: 'Ruchita (Student)',
             action: 'Complaint submitted',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(20),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Set priority to High and assigned to Devon Brooks',
             status: 'Assigned'
           },
@@ -195,7 +195,7 @@
       {
         id: 'CMP-2026-1003',
         studentId: 'stu-2',
-        studentName: 'Maya Lin',
+        studentName: 'Mythri',
         studentCode: 'STU-2026-218',
         title: 'Flickering Ceiling Tube Lights in Electronics Lab 3B',
         description:
@@ -214,13 +214,13 @@
         history: [
           {
             timestamp: hoursAgo(18),
-            actor: 'Maya Lin (Student)',
+            actor: 'Mythri (Student)',
             action: 'Complaint submitted with attachment',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(12),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Escalated priority to Urgent and assigned to Sarah Jenkins',
             status: 'Assigned'
           }
@@ -229,7 +229,7 @@
       {
         id: 'CMP-2026-1004',
         studentId: 'stu-1',
-        studentName: 'Aarav Patel',
+        studentName: 'Ruchita',
         studentCode: 'STU-2026-104',
         title: 'Water Cooler Leaking Near Science Corridor',
         description:
@@ -249,13 +249,13 @@
         history: [
           {
             timestamp: hoursAgo(72),
-            actor: 'Aarav Patel (Student)',
+            actor: 'Ruchita (Student)',
             action: 'Complaint submitted',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(65),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Set priority to High and assigned to Priya Sharma',
             status: 'Assigned'
           },
@@ -276,7 +276,7 @@
       {
         id: 'CMP-2026-1005',
         studentId: 'stu-2',
-        studentName: 'Maya Lin',
+        studentName: 'Mythri',
         studentCode: 'STU-2026-218',
         title: 'Broken Desk Hinges in Seminar Room 108',
         description:
@@ -295,13 +295,13 @@
         history: [
           {
             timestamp: hoursAgo(14),
-            actor: 'Maya Lin (Student)',
+            actor: 'Mythri (Student)',
             action: 'Complaint submitted',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(9),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Set priority to Medium and assigned to Marcus Thorne',
             status: 'Assigned'
           }
@@ -310,7 +310,7 @@
       {
         id: 'CMP-2026-1006',
         studentId: 'stu-1',
-        studentName: 'Aarav Patel',
+        studentName: 'Ruchita',
         studentCode: 'STU-2026-104',
         title: 'Overflowing Recycling Bins in Student Commons',
         description:
@@ -330,13 +330,13 @@
         history: [
           {
             timestamp: hoursAgo(96),
-            actor: 'Aarav Patel (Student)',
+            actor: 'Ruchita (Student)',
             action: 'Complaint submitted',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(90),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Set priority to Low and assigned to Marcus Thorne',
             status: 'Assigned'
           },
@@ -357,7 +357,7 @@
       {
         id: 'CMP-2026-1007',
         studentId: 'stu-2',
-        studentName: 'Maya Lin',
+        studentName: 'Mythri',
         studentCode: 'STU-2026-218',
         title: 'Loose Power Outlet at Computer Lab Workstation 12',
         description:
@@ -376,7 +376,7 @@
         history: [
           {
             timestamp: hoursAgo(2),
-            actor: 'Maya Lin (Student)',
+            actor: 'Mythri (Student)',
             action: 'Complaint submitted (Pending Admin Review)',
             status: 'Pending'
           }
@@ -385,7 +385,7 @@
       {
         id: 'CMP-2026-1008',
         studentId: 'stu-1',
-        studentName: 'Aarav Patel',
+        studentName: 'Ruchita',
         studentCode: 'STU-2026-104',
         title: 'North Courtyard Bicycle Rack Gate Latch Jammed',
         description:
@@ -404,13 +404,13 @@
         history: [
           {
             timestamp: hoursAgo(40),
-            actor: 'Aarav Patel (Student)',
+            actor: 'Ruchita (Student)',
             action: 'Complaint submitted',
             status: 'Pending'
           },
           {
             timestamp: hoursAgo(32),
-            actor: 'Dr. Elena Vance (Administrator)',
+            actor: 'Fahad (Administrator)',
             action: 'Assigned to Marcus Thorne (Low Priority)',
             status: 'Assigned'
           },
@@ -514,6 +514,14 @@
     }
   }
 
+  function migrateDemoName(text) {
+    if (typeof text !== 'string') return text;
+    return text
+      .replace(/\bAarav Patel\b/g, 'Ruchita')
+      .replace(/\bMaya Lin\b/g, 'Mythri')
+      .replace(/\bDr\. Elena Vance\b/g, 'Fahad');
+  }
+
   function sanitizeComplaint(raw) {
     if (!raw || typeof raw !== 'object') return null;
     if (typeof raw.id !== 'string' || typeof raw.title !== 'string' || typeof raw.description !== 'string') {
@@ -532,7 +540,10 @@
     return {
       id: raw.id.trim().slice(0, 32),
       studentId: typeof raw.studentId === 'string' ? raw.studentId : 'stu-1',
-      studentName: typeof raw.studentName === 'string' && raw.studentName.trim() ? raw.studentName.trim() : 'Demo Student',
+      studentName:
+        typeof raw.studentName === 'string' && raw.studentName.trim()
+          ? migrateDemoName(raw.studentName.trim())
+          : 'Demo Student',
       studentCode: typeof raw.studentCode === 'string' ? raw.studentCode : 'STU-DEMO',
       title: raw.title.trim().slice(0, 120),
       description: raw.description.trim().slice(0, 800),
@@ -552,7 +563,7 @@
             .filter((h) => h && typeof h.action === 'string')
             .map((h) => ({
               timestamp: h.timestamp || updatedAt,
-              actor: typeof h.actor === 'string' ? h.actor : 'System',
+              actor: typeof h.actor === 'string' ? migrateDemoName(h.actor) : 'System',
               action: h.action,
               status: STATUSES.includes(h.status) ? h.status : status
             }))
@@ -576,6 +587,13 @@
           throw new Error('All stored complaint entries failed schema validation');
         }
         state.complaints = cleaned;
+        if (
+          rawComplaints.includes('Aarav Patel') ||
+          rawComplaints.includes('Maya Lin') ||
+          rawComplaints.includes('Dr. Elena Vance')
+        ) {
+          saveComplaints();
+        }
       } catch (err) {
         console.warn('Recovering corrupted LocalStorage complaints:', err);
         state.complaints = createSeedComplaints();
@@ -593,6 +611,7 @@
           const validUser = (DEMO_USERS[sess.role] || []).find((u) => u.id === sess.id);
           if (validUser) {
             state.session = validUser;
+            safeStorageSet(STORAGE_KEYS.SESSION, JSON.stringify(validUser));
           }
         }
       } catch (_err) {

@@ -77,8 +77,8 @@ On the **Login Screen**, select one of the three role cards and choose a fiction
 
 | Role | Default Demo Profile | Identifier | Capabilities |
 | :--- | :--- | :--- | :--- |
-| **Student** | Aarav Patel *(or Maya Lin)* | `STU-2026-104` | Submit complaints, upload photos, search/track personal tickets |
-| **Administrator** | Dr. Elena Vance | `ADM-001` | View all complaints, set priority, assign technicians, manage records |
+| **Student** | Ruchita *(or Mythri)* | `STU-2026-104` | Submit complaints, upload photos, search/track personal tickets |
+| **Administrator** | Fahad | `ADM-001` | View all complaints, set priority, assign technicians, manage records |
 | **Maintenance Staff** | Marcus Thorne *(or Sarah Jenkins, Devon Brooks, Priya Sharma)* | `TECH-101` | View assigned tasks only, mark `In Progress`, submit resolution notes & mark `Resolved` |
 
 > **Demo Tip:** When demonstrating the end-to-end flow, assign your new complaint as **Administrator** to **Marcus Thorne (`TECH-101`)**, then log in as **Marcus Thorne** under Maintenance Staff to resolve it.

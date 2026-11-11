@@ -17,7 +17,7 @@
 
 ### Step 2: Student Login & Classroom Complaint Submission (0:45 – 1:45)
 - **Actions:**
-  1. On the Login Screen, select the **Student** role card (`Aarav Patel — STU-2026-104`) and click **Enter Workspace**.
+  1. On the Login Screen, select the **Student** role card (`Ruchita — STU-2026-104`) and click **Enter Workspace**.
   2. Briefly highlight the Student Dashboard KPI cards (**Total**, **Pending**, **In Progress**, **Resolved**), category bars, and personal complaint isolation.
   3. Click **+ Submit New Complaint**.
   4. Enter a classroom maintenance complaint:
@@ -31,7 +31,7 @@
 ### Step 3: Administrator Review, Prioritization & Staff Assignment (1:45 – 2:45)
 - **Actions:**
   1. Click **Switch Role / Sign Out** in the sidebar.
-  2. Select **Administrator** (`Dr. Elena Vance — ADM-001`) and click **Enter Workspace**.
+  2. Select **Administrator** (`Fahad — ADM-001`) and click **Enter Workspace**.
   3. Show campus-wide KPI metrics, category breakdown, and the full **Complaint Management Registry** table.
   4. Locate `CMP-2026-1009` and click **Manage**.
   5. Set **Priority** to `High`, select **Marcus Thorne (`TECH-101`)** under **Assign Maintenance Staff** (note that status automatically advances from `Pending` to `Assigned`), and click **Save Admin Changes**.
@@ -46,7 +46,7 @@
 
 ### Step 5: Student Status Verification & Persistence Check (3:40 – 4:10)
 - **Actions:**
-  1. Sign out and log back in as **Student** (`Aarav Patel`).
+  1. Sign out and log back in as **Student** (`Ruchita`).
   2. Show `CMP-2026-1009` now displaying **Resolved** across all four pipeline steps, showing **Assigned Staff: Marcus Thorne** and the technician's **Resolution Notes**.
   3. Refresh the browser (`F5` / `Ctrl+R`) to demonstrate that both the active session and all complaint updates persist in `LocalStorage`.
 

@@ -3,3 +3,4 @@ services:
     name: campuscare-management-system
     runtime: static
     staticPublishPath: .
+
